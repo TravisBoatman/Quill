@@ -64,4 +64,4 @@ if ($PSVersionTable.PSEdition -eq "Core") {
 
 Write-Host "Setup completed. Restart any open consoles to apply the changes. Be sure to set the font in your terminal settings to the Nerd Font you downloaded.`n" -ForegroundColor Yellow
 Write-Host "You can copy my terminal settings from $env:TB_SCRIPTS\configs\term-settings.json if you want to use them.`n" -ForegroundColor Yellow
-Write-Host "Configure your 'go' and 'open' commands by creating 'locations.json' and 'actions.json' files in $env:TB_SCRIPTS\paths. Actions allow file paths and CLI commands with params. Locations allow directory paths only.`n" -ForegroundColor Yellow
+Write-Host "Configure your 'go' and 'open' commands by creating 'locations.json' and 'actions.json' files in $env:TB_SCRIPTS\paths. Actions allow file paths, URLs, and CLI commands with params. Locations allow directory paths only.`n" -ForegroundColor Yellow
