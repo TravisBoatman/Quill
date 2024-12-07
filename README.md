@@ -23,6 +23,41 @@ For the most part anyone should be able to use them and use my custom theme and 
 * npm-creds - Sets a new NPM auth key.
 * vm - Start, Stop, Save, Restart, Checkpoint Hyper-V VMs.
 
+# Examples
+
+## Open:
+
+```json
+{
+    "mail":  "https://outlook.office.com/mail/inbox",
+    "teams": "https://teams.microsoft.com",
+    "vs":    "devenv",
+    "jira":  "https://jira.mycompany.com/",
+    "groups": {
+        "code": ["vs", "jira"],
+        "web": ["mail", "teams"]
+    }
+}
+```
+
+```console
+open mail // Opens mail.
+open mail, teams // Opens both mail and teams.
+open code // Opens all in the group.
+open code, web // Opens both groups.
+```
+
+## VM:
+
+All VM commands require administrator permissions. If a VM name is not passed then the latest created VM is used.
+
+
+```
+sudo vm start // Starts the newest VM configured.
+sudo vm start myVmName // Starts the VM called "myVmName".
+sudo vm stop // Stops the latest configured VM.
+```
+
 # Additional Scripts
 
 The directory `/additional-scripts` is used for scripts you don't want tracked by git.

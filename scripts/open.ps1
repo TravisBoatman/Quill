@@ -30,7 +30,16 @@ if ($names -contains "help") {
     exit
 }
 
+$expandedNames = @()
 foreach ($name in $names) {
+    if ($actions.PSObject.Properties.Name -contains "groups" -and $null -ne $actions.groups -and $actions.groups.PSObject.Properties.Name -contains $name) {
+        $expandedNames += $actions.groups.$name
+    } else {
+        $expandedNames += $name
+    }
+}
+
+foreach ($name in $expandedNames) {
     if ($actions.PSObject.Properties.Name -contains $name) {
         $resolvedPath = Expand-PathVariables $actions.$name
         
